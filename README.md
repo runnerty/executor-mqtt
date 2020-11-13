@@ -106,6 +106,7 @@ Add in [plan.json]:
     }
   }
 }
+```
 
 More information in MQTT [api reference](https://github.com/mqttjs/MQTT.js/#api)
 
