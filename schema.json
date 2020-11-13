@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-mqtt",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-mqtt"
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["mqtt", "mqtts", "tcp", "tls", "ws", "wss"]
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "port": {
+          "type": "number"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "keepalive": {
+          "type": "number"
+        },
+        "reschedulePings": {
+          "type": "boolean"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "protocolId": {
+          "type": "string"
+        },
+        "protocolVersion": {
+          "type": "number"
+        },
+        "clean": {
+          "type": "boolean"
+        },
+        "reconnectPeriod": {
+          "type": "number"
+        },
+        "connectTimeout": {
+          "type": "number"
+        },
+        "queueQoSZero": {
+          "type": "boolean"
+        },
+        "tlsKeyFile": {
+          "type": "string"
+        },
+        "tlsCertFile": {
+          "type": "string"
+        },
+        "tlsCAFile": {
+          "type": "string"
+        },
+        "rejectUnauthorized": {
+          "type": "boolean"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "sessionExpiryInterval": {
+              "type": "number"
+            },
+            "receiveMaximum": {
+              "type": "number"
+            },
+            "maximumPacketSize": {
+              "type": "number"
+            },
+            "topicAliasMaximum": {
+              "type": "number"
+            },
+            "requestResponseInformation": {
+              "type": "boolean"
+            },
+            "userProperties": {
+              "type": "object"
+            },
+            "authenticationMethod": {
+              "type": "string"
+            },
+            "authPacket": {
+              "type": "string"
+            },
+            "resubscribe": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "required": ["topic", "message"],
+      "properties": {
+        "topic": {
+          "type": ["string", "object", "array"]
+        },
+        "message": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "qos": {
+              "type": "number"
+            },
+            "retain": {
+              "type": "boolean"
+            },
+            "dup": {
+              "type": "boolean"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "payloadFormatIndicator": {
+                  "type": "boolean"
+                },
+                "messageExpiryInterval": {
+                  "type": "number"
+                },
+                "topicAlias": {
+                  "type": "number"
+                },
+                "responseTopic": {
+                  "type": "string"
+                },
+                "userProperties": {
+                  "type": "object"
+                },
+                "subscriptionIdentifier": {
+                  "type": "number"
+                },
+                "contentType": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
