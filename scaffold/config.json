@@ -1,0 +1,12 @@
+{
+  "executors": [
+    {
+      "id": "mqtt_default",
+      "type": "@runnerty-executor-mqtt",
+      "hostname": "localhost",
+      "port": 1883,
+      "username": "guest",
+      "password": "pass"
+    }
+  ]
+}
