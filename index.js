@@ -1,9 +1,9 @@
 'use strict';
 const mqtt = require('async-mqtt');
 
-const Execution = global.ExecutionClass;
+const Executor = require('@runnerty/module-core').Executor;
 
-class mqttExecutor extends Execution {
+class mqttExecutor extends Executor {
   constructor(process) {
     super(process);
     this.options = {};
