@@ -7,21 +7,42 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Dependency Status][david-badge]][david-badge-url]
 <a href="#badge">
-  <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg">
+<img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg">
 </a>
 
 # Executor for [Runnerty]: MQTT
+
 Module MQTT Publisher.
 This is a wrapper from the [MQTT.js](https://github.com/mqttjs/MQTT.js)
 
 ### Installation:
+
+Through NPM
+
 ```bash
 npm i @runnerty/executor-mqtt
 ```
 
+You can also add modules to your project with [runnerty-cli]
+
+```bash
+npx runnerty-cli add @runnerty/executor-mqtt
+```
+
+This command installs the module in your project, adds example configuration in your `config.json` and creates an example plan of use.
+
+If you have installed [runnerty-cli] globally you can include the module with this command:
+
+```bash
+rty add @runnerty/executor-mqtt
+```
+
 ### Configuration:
+
 Add in [config.json]:
+
 ##### Simple:
+
 ```json
 {
   "id": "mqtt_default",
@@ -31,6 +52,7 @@ Add in [config.json]:
 ```
 
 ##### All parameters:
+
 ```json
 {
   "id": "mqtt_default",
@@ -54,26 +76,29 @@ Add in [config.json]:
   "tlsCAFile": "./my_cert.ca",
   "rejectUnauthorized": false,
   "properties": {
-      "sessionExpiryInterval": 3600,
-      "receiveMaximum": 1024,
-      "maximumPacketSize": 32,
-      "topicAliasMaximum":32,
-      "requestResponseInformation": true,
-      "userProperties": {
-        "some": "value"
-      },
-      "authenticationMethod": "auth_method",
-      "authPacket": {
-        "some": "value"
-      },
-      "resubscribe": true
+    "sessionExpiryInterval": 3600,
+    "receiveMaximum": 1024,
+    "maximumPacketSize": 32,
+    "topicAliasMaximum": 32,
+    "requestResponseInformation": true,
+    "userProperties": {
+      "some": "value"
+    },
+    "authenticationMethod": "auth_method",
+    "authPacket": {
+      "some": "value"
+    },
+    "resubscribe": true
   }
 }
 ```
 
 ### Plan sample:
+
 Add in [plan.json]:
+
 ##### Simple:
+
 ```json
 {
   "id": "mqtt_default",
@@ -94,15 +119,15 @@ Add in [plan.json]:
     "retain": false,
     "dup": false,
     "properties": {
-        "payloadFormatIndicator": true,
-        "messageExpiryInterval": 60,
-        "topicAlias": 1,
-        "responseTopic": "res_topic",
-        "userProperties": {
-          "some": "value"
-        },
-        "subscriptionIdentifier": 1234,
-        "contentType": "contenttype_value"
+      "payloadFormatIndicator": true,
+      "messageExpiryInterval": 60,
+      "topicAlias": 1,
+      "responseTopic": "res_topic",
+      "userProperties": {
+        "some": "value"
+      },
+      "subscriptionIdentifier": 1234,
+      "contentType": "contenttype_value"
     }
   }
 }
@@ -111,9 +136,10 @@ Add in [plan.json]:
 More information in MQTT [api reference](https://github.com/mqttjs/MQTT.js/#api)
 
 ### Output (Process values):
-* `PROCESS_EXEC_ERR_OUTPUT`: Error output message.
 
-[Runnerty]: http://www.runnerty.io
+- `PROCESS_EXEC_ERR_OUTPUT`: Error output message.
+
+[runnerty]: http://www.runnerty.io
 [downloads-image]: https://img.shields.io/npm/dm/@runnerty/executor-mqtt.svg
 [npm-url]: https://www.npmjs.com/package/@runnerty/executor-mqtt
 [npm-image]: https://img.shields.io/npm/v/@runnerty/executor-mqtt.svg
@@ -121,3 +147,4 @@ More information in MQTT [api reference](https://github.com/mqttjs/MQTT.js/#api)
 [david-badge-url]: https://david-dm.org/runnerty/executor-mqtt
 [config.json]: http://docs.runnerty.io/config/
 [plan.json]: http://docs.runnerty.io/plan/
+[runnerty-cli]: https://www.npmjs.com/package/runnerty-cli
