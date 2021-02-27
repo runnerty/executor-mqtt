@@ -1,5 +1,6 @@
 'use strict';
 const mqtt = require('async-mqtt');
+const fs = require('fs');
 
 const Executor = require('@runnerty/module-core').Executor;
 
@@ -25,7 +26,7 @@ class mqttExecutor extends Executor {
   }
 
   async connect() {
-    let connectOptions = {
+    const connectOptions = {
       protocol: this.options.protocol,
       hostname: this.options.hostname,
       port: this.options.port,
